@@ -21,7 +21,6 @@ protocol CourseDetailsDataPassing {
 }
 
 class CourseDetailsRouter: NSObject, CourseDetailsRoutingLogic, CourseDetailsDataPassing {
-    
     weak var viewController: CourseDetailsViewController?
     var dataStore: CourseDetailsDataStore?
     

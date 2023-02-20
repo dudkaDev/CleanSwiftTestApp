@@ -103,12 +103,12 @@
 			isa = PBXGroup;
 			children = (
 				5545D4F9299E7362008C7583 /* CourseCell */,
+				5545D4F1299E7356008C7583 /* CourseListViewController.swift */,
+				5545D4F2299E7356008C7583 /* CourseListInteractor.swift */,
 				5545D4ED299E7356008C7583 /* CourseListPresenter.swift */,
 				5545D4EE299E7356008C7583 /* CourseListWorker.swift */,
 				5545D4EF299E7356008C7583 /* CourseListRouter.swift */,
 				5545D4F0299E7356008C7583 /* CourseListModels.swift */,
-				5545D4F1299E7356008C7583 /* CourseListViewController.swift */,
-				5545D4F2299E7356008C7583 /* CourseListInteractor.swift */,
 			);
 			path = CourseList;
 			sourceTree = "<group>";

@@ -14,6 +14,7 @@ import UIKit
 
 protocol CourseDetailsDisplayLogic: AnyObject {
     func displayCourseDetails(viewModel: CourseDetails.ShowDetails.ViewModel)
+    func displayFavoriteButtonStatus(viewModel: CourseDetails.SetFavoriteStatus.ViewModel)
 }
 
 class CourseDetailsViewController: UIViewController {
@@ -27,8 +28,6 @@ class CourseDetailsViewController: UIViewController {
     var course: Course!
     var interactor: CourseDetailsBusinessLogic?
     var router: (NSObjectProtocol & CourseDetailsRoutingLogic & CourseDetailsDataPassing)?
-    
-    private var isFavorite = false
     
     // MARK: Object lifecycle
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -44,35 +43,16 @@ class CourseDetailsViewController: UIViewController {
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadFavoriteStatus()
-        setupUI()
         passRequest()
     }
     
     @IBAction func toggleFavorite() {
-        isFavorite.toggle()
-        setStatusForFavoriteButton()
-        DataManager.shared.setFavoriteStatus(for: course.name, with: isFavorite)
+        interactor?.setFavoriteStatus()
     }
     
     private func passRequest() {
         let request = CourseDetails.ShowDetails.Request(course: course)
         interactor?.provideCourseDetails(request: request)
-    }
-    
-    private func setupUI() {
-        if let imageData = ImageManager.shared.fetchImageData(from: course.imageUrl) {
-            courseImage.image = UIImage(data: imageData)
-        }
-        setStatusForFavoriteButton()
-    }
-    
-    private func setStatusForFavoriteButton() {
-        favoriteButton.tintColor = isFavorite ? .red : .gray
-    }
-    
-    private func loadFavoriteStatus() {
-        isFavorite = DataManager.shared.getFavoriteStatus(for: course.name)
     }
 }
 
@@ -81,5 +61,12 @@ extension CourseDetailsViewController: CourseDetailsDisplayLogic {
     func displayCourseDetails(viewModel: CourseDetails.ShowDetails.ViewModel) {
         courseNameLabel.text = viewModel.courseName
         numberOfLessonsLabel.text = viewModel.numberOfLessons
+        numberOfTestsLabel.text = viewModel.numberOfTests
+        courseImage.image = UIImage(data: viewModel.imageData)
+        favoriteButton.tintColor = viewModel.isFavorite ? .red : .gray
+    }
+    
+    func displayFavoriteButtonStatus(viewModel: CourseDetails.SetFavoriteStatus.ViewModel) {
+        favoriteButton.tintColor = viewModel.isFavorite ? .red : .gray
     }
 }
