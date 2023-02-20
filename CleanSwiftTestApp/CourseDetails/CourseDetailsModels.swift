@@ -15,9 +15,6 @@ enum CourseDetails {
  
     // MARK: Use cases
     enum ShowDetails {
-        struct Request {
-            let course: Course
-        }
         
         struct Response {
             let courseName: String?

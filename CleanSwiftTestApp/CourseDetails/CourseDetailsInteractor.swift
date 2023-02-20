@@ -13,12 +13,12 @@
 import Foundation
 
 protocol CourseDetailsBusinessLogic {
-    func provideCourseDetails(request: CourseDetails.ShowDetails.Request)
+    func provideCourseDetails()
     func setFavoriteStatus()
 }
 
 protocol CourseDetailsDataStore {
-    var course: Course? { get }
+    var course: Course? { get set }
     var isFavorite: Bool { get }
 }
 
@@ -28,8 +28,7 @@ class CourseDetailsInteractor: CourseDetailsBusinessLogic, CourseDetailsDataStor
     var presenter: CourseDetailsPresentationLogic?
     var worker: CourseDetailsWorker?
     
-    func provideCourseDetails(request: CourseDetails.ShowDetails.Request) {
-        course = request.course
+    func provideCourseDetails() {
         worker = CourseDetailsWorker()
         isFavorite = worker?.getFavoriteStatus(for: course?.name ?? "") ?? false
         let imageData = worker?.getImage(from: course?.imageUrl)

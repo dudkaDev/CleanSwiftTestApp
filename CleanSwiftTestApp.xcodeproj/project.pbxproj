@@ -29,6 +29,8 @@
 		5545D511299E77D0008C7583 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545D510299E77D0008C7583 /* ImageManager.swift */; };
 		5545D513299E77DF008C7583 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545D512299E77DF008C7583 /* DataManager.swift */; };
 		5545D515299E786F008C7583 /* CourseDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545D514299E786F008C7583 /* CourseDetailsConfigurator.swift */; };
+		5545D51729A37EBB008C7583 /* CourseListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545D51629A37EBB008C7583 /* CourseListConfigurator.swift */; };
+		5545D51929A3841E008C7583 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5545D51829A3841E008C7583 /* CourseCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		5545D510299E77D0008C7583 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		5545D512299E77DF008C7583 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		5545D514299E786F008C7583 /* CourseDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsConfigurator.swift; sourceTree = "<group>"; };
+		5545D51629A37EBB008C7583 /* CourseListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListConfigurator.swift; sourceTree = "<group>"; };
+		5545D51829A3841E008C7583 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 				5545D4EE299E7356008C7583 /* CourseListWorker.swift */,
 				5545D4EF299E7356008C7583 /* CourseListRouter.swift */,
 				5545D4F0299E7356008C7583 /* CourseListModels.swift */,
+				5545D51629A37EBB008C7583 /* CourseListConfigurator.swift */,
 			);
 			path = CourseList;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 		5545D4F9299E7362008C7583 /* CourseCell */ = {
 			isa = PBXGroup;
 			children = (
+				5545D51829A3841E008C7583 /* CourseCell.swift */,
 			);
 			path = CourseCell;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 				5545D502299E73AB008C7583 /* CourseDetailsWorker.swift in Sources */,
 				5545D511299E77D0008C7583 /* ImageManager.swift in Sources */,
 				5545D4F8299E7356008C7583 /* CourseListInteractor.swift in Sources */,
+				5545D51929A3841E008C7583 /* CourseCell.swift in Sources */,
 				5545D4F3299E7356008C7583 /* CourseListPresenter.swift in Sources */,
 				5545D505299E73AB008C7583 /* CourseDetailsViewController.swift in Sources */,
 				5545D50F299E77C3008C7583 /* NetworkManager.swift in Sources */,
@@ -269,6 +276,7 @@
 				5545D50D299E778B008C7583 /* Course.swift in Sources */,
 				5545D4F4299E7356008C7583 /* CourseListWorker.swift in Sources */,
 				5545D504299E73AB008C7583 /* CourseDetailsModels.swift in Sources */,
+				5545D51729A37EBB008C7583 /* CourseListConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

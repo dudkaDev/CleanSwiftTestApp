@@ -32,6 +32,9 @@
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Am7-i8-fMW" kind="show" identifier="CourseDetails" id="cEd-jt-X7Y"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -52,7 +55,6 @@
                     <navigationItem key="navigationItem" title="Courses" id="EKX-hY-3Ys"/>
                     <connections>
                         <outlet property="tableView" destination="Na4-8P-VIG" id="5KL-M4-pJn"/>
-                        <segue destination="Am7-i8-fMW" kind="show" identifier="showDetails" id="W8l-9N-iOO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIY-19-A5d" sceneMemberID="firstResponder"/>

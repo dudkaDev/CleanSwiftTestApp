@@ -11,23 +11,23 @@
 //
 
 protocol CourseListBusinessLogic {
-    func doSomething(request: CourseList.Something.Request)
+    func fetchCourses()
 }
 
 protocol CourseListDataStore {
-    
+    var courses: [Course] { get }
 }
 
 class CourseListInteractor: CourseListBusinessLogic, CourseListDataStore {
     
     var presenter: CourseListPresentationLogic?
-    var worker: CourseListWorker?
+    var courses: [Course] = []
     
-    func doSomething(request: CourseList.Something.Request) {
-        worker = CourseListWorker()
-        worker?.doSomeWork()
-        
-        let response = CourseList.Something.Response()
-        presenter?.presentSomething(response: response)
+    func fetchCourses() {
+        NetworkManager.shared.fetchData { [weak self] courses in
+            self?.courses = courses
+            let response = CourseList.ShowCourses.Response(courses: courses)
+            self?.presenter?.presentCourses(response: response)
+        }
     }
 }

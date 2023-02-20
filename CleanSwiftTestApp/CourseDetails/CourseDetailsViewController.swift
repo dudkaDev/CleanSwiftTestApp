@@ -24,8 +24,7 @@ class CourseDetailsViewController: UIViewController {
     @IBOutlet private var numberOfTestsLabel: UILabel!
     @IBOutlet private var courseImage: UIImageView!
     @IBOutlet private var favoriteButton: UIButton!
-    
-    var course: Course!
+
     var interactor: CourseDetailsBusinessLogic?
     var router: (NSObjectProtocol & CourseDetailsRoutingLogic & CourseDetailsDataPassing)?
     
@@ -51,8 +50,7 @@ class CourseDetailsViewController: UIViewController {
     }
     
     private func passRequest() {
-        let request = CourseDetails.ShowDetails.Request(course: course)
-        interactor?.provideCourseDetails(request: request)
+        interactor?.provideCourseDetails()
     }
 }
 
